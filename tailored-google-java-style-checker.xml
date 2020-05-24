@@ -4,8 +4,8 @@
           "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <!--
-    Checkstyle configuration adapted from google-style.xml
-	(https://checkstyle.sourceforge.io/google_style.html)
+    Checkstyle configuration adapted from google-checks.xml
+	(https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml)
 	
 	Supported Checkstyle version: 8.29
  -->
@@ -131,6 +131,7 @@
              value="PACKAGE_DEF, IMPORT, STATIC_IMPORT, CLASS_DEF, INTERFACE_DEF, ENUM_DEF,
                     STATIC_INIT, INSTANCE_INIT, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"/>
             <property name="allowNoEmptyLineBetweenFields" value="true"/>
+            <property name="allowMultipleEmptyLines" value="false"/>
             <property name="allowMultipleEmptyLinesInsideClassMembers" value="false"/>
         </module>
         <module name="SeparatorWrap">
@@ -181,7 +182,7 @@
              value="Parameter name ''{0}'' must match pattern ''{1}''."/>
         </module>
         <module name="LambdaParameterName">
-            <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
+            <property name="format" value="^(\$|[a-z]([a-z0-9][a-zA-Z0-9]*)?)$"/>
             <message key="name.invalidPattern"
                      value="Lambda parameter name ''{0}'' must match pattern ''{1}''."/>
         </module>
@@ -199,6 +200,9 @@
             <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
             <message key="name.invalidPattern"
              value="Class type name ''{0}'' must match pattern ''{1}''."/>
+        </module>
+        <module name="ConstantName">
+            <property name="format" value="^(?!LOG(GER)?)(log(ger)?$|[A-Z][A-Z0-9]*(_[A-Z0-9]+)*)$"/>
         </module>
         <module name="MethodTypeParameterName">
             <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
@@ -232,6 +236,7 @@
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
+            <property name="allowedAbbreviations" value="DTO"/>
             <property name="tokens"
              value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF,
                     PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF"/>
@@ -239,9 +244,11 @@
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="VariableDeclarationUsageDistance"/>
         <module name="CustomImportOrder">
-            <property name="sortImportsInGroupAlphabetically" value="true"/>
-            <property name="separateLineBetweenGroups" value="true"/>
-            <property name="customImportOrderRules" value="STATIC###THIRD_PARTY_PACKAGE"/>
+              <property name="sortImportsInGroupAlphabetically" value="true"/>
+              <property name="separateLineBetweenGroups" value="false"/>
+              <property name="customImportOrderRules" value="STATIC###STANDARD_JAVA_PACKAGE###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE"/>
+              <property name="specialImportsRegExp" value="^org\."/>
+              <property name="thirdPartyPackageRegExp" value="^com\."/>
             <property name="tokens" value="IMPORT, STATIC_IMPORT, PACKAGE_DEF"/>
         </module>
         <module name="MethodParamPad">
@@ -324,5 +331,13 @@
                       default="checkstyle-xpath-suppressions.xml" />
             <property name="optional" value="true"/>
         </module>
+    </module>
+    <module name="RegexpMultiline">
+        <property name="message" value="Blank line at start of block is not allowed"/>
+        <property name="format" value="\)\s+(throws .*\s+)*\{\s*\n\s*\n"/>
+    </module>
+    <module name="RegexpMultiline">
+        <property name="message" value="Blank line at end of block is not allowed"/>
+        <property name="format" value="^\s*\n\s*\}"/>
     </module>
 </module>
