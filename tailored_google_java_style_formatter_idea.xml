@@ -30,10 +30,6 @@
     <option name="ARRAY_INITIALIZER_WRAP" value="1" />
     <option name="ASSIGNMENT_WRAP" value="1" />
     <option name="WRAP_COMMENTS" value="true" />
-    <option name="METHOD_ANNOTATION_WRAP" value="1" />
-    <option name="CLASS_ANNOTATION_WRAP" value="1" />
-    <option name="FIELD_ANNOTATION_WRAP" value="1" />
-    <option name="PARAMETER_ANNOTATION_WRAP" value="1" />
     <option name="VARIABLE_ANNOTATION_WRAP" value="1" />
     <indentOptions>
       <option name="SMART_TABS" value="true" />
