@@ -13,8 +13,6 @@
     <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
     <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
     <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
-    <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
-    <option name="BLANK_LINES_AFTER_ANONYMOUS_CLASS_HEADER" value="1" />
     <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
     <option name="ALIGN_MULTILINE_RESOURCES" value="false" />
     <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
@@ -44,7 +42,7 @@
       <groups>
         <group>
           <type>OVERRIDDEN_METHODS</type>
-          <order>KEEP</order>
+          <order>BY_NAME</order>
         </group>
       </groups>
       <rules>
@@ -179,7 +177,6 @@
                 <PROTECTED>true</PROTECTED>
               </AND>
             </match>
-            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -191,7 +188,6 @@
                 <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
               </AND>
             </match>
-            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -203,7 +199,6 @@
                 <PRIVATE>true</PRIVATE>
               </AND>
             </match>
-            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -225,7 +220,6 @@
                 <PROTECTED>true</PROTECTED>
               </AND>
             </match>
-            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -236,7 +230,6 @@
                 <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
               </AND>
             </match>
-            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -247,7 +240,6 @@
                 <PRIVATE>true</PRIVATE>
               </AND>
             </match>
-            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -269,6 +261,30 @@
           <rule>
             <match>
               <CONSTRUCTOR>true</CONSTRUCTOR>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD>true</METHOD>
+                <PUBLIC>true</PUBLIC>
+                <STATIC>true</STATIC>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD>true</METHOD>
+                <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
+                <STATIC>true</STATIC>
+              </AND>
             </match>
             <order>BY_NAME</order>
           </rule>
