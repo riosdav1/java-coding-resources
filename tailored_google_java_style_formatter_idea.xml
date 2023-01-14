@@ -44,6 +44,14 @@
           <type>OVERRIDDEN_METHODS</type>
           <order>BY_NAME</order>
         </group>
+        <group>
+          <type>GETTERS_AND_SETTERS</type>
+          <order>KEEP</order>
+        </group>
+        <group>
+          <type>DEPENDENT_METHODS</type>
+          <order>BREADTH_FIRST</order>
+        </group>
       </groups>
       <rules>
         <section>
@@ -177,6 +185,7 @@
                 <PROTECTED>true</PROTECTED>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -188,6 +197,7 @@
                 <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -199,6 +209,7 @@
                 <PRIVATE>true</PRIVATE>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -220,6 +231,7 @@
                 <PROTECTED>true</PROTECTED>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -230,6 +242,7 @@
                 <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -240,6 +253,7 @@
                 <PRIVATE>true</PRIVATE>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -303,8 +317,31 @@
         <section>
           <rule>
             <match>
+              <AND>
+                <METHOD>true</METHOD>
+                <PUBLIC>true</PUBLIC>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
               <METHOD>true</METHOD>
             </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD>true</METHOD>
+                <PRIVATE>true</PRIVATE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -312,6 +349,7 @@
             <match>
               <ENUM>true</ENUM>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -319,6 +357,7 @@
             <match>
               <INTERFACE>true</INTERFACE>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -329,6 +368,7 @@
                 <STATIC>true</STATIC>
               </AND>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
         <section>
@@ -336,6 +376,7 @@
             <match>
               <CLASS>true</CLASS>
             </match>
+            <order>BY_NAME</order>
           </rule>
         </section>
       </rules>
