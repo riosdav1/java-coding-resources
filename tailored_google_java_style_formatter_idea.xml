@@ -48,10 +48,6 @@
           <type>GETTERS_AND_SETTERS</type>
           <order>KEEP</order>
         </group>
-        <group>
-          <type>DEPENDENT_METHODS</type>
-          <order>BREADTH_FIRST</order>
-        </group>
       </groups>
       <rules>
         <section>
@@ -308,6 +304,7 @@
             <match>
               <AND>
                 <METHOD>true</METHOD>
+                <PRIVATE>true</PRIVATE>
                 <STATIC>true</STATIC>
               </AND>
             </match>
@@ -328,7 +325,10 @@
         <section>
           <rule>
             <match>
-              <METHOD>true</METHOD>
+              <AND>
+                <METHOD>true</METHOD>
+                <PACKAGE_PRIVATE>true</PACKAGE_PRIVATE>
+              </AND>
             </match>
             <order>BY_NAME</order>
           </rule>
