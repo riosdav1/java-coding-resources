@@ -330,6 +330,16 @@
           <rule>
             <match>
               <AND>
+                <ABSTRACT>true</ABSTRACT>
+                <METHOD>true</METHOD>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
                 <METHOD>true</METHOD>
                 <PUBLIC>true</PUBLIC>
               </AND>
