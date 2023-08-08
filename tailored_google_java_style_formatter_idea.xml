@@ -1,6 +1,5 @@
-<code_scheme name="tailored-google-java-style-formatter" version="173">
+<code_scheme name="tailored-google-java-style-formatter copy1" version="173">
   <option name="FORMATTER_TAGS_ENABLED" value="true" />
-  <option name="ENABLE_SECOND_REFORMAT" value="true" />
   <JavaCodeStyleSettings>
     <option name="VISIBILITY" value="private" />
     <option name="ANNOTATION_PARAMETER_WRAP" value="1" />
@@ -39,6 +38,7 @@
     <option name="FIELD_ANNOTATION_WRAP" value="5" />
     <option name="PARAMETER_ANNOTATION_WRAP" value="5" />
     <option name="VARIABLE_ANNOTATION_WRAP" value="1" />
+    <option name="ENUM_CONSTANTS_WRAP" value="2" />
     <indentOptions>
       <option name="SMART_TABS" value="true" />
     </indentOptions>
